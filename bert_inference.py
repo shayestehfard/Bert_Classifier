@@ -2,7 +2,7 @@ from transformers import pipeline
 import pandas as pd
 from sklearn.metrics import accuracy_score, classification_report
 
-# Load the sentiment analysis model
+# Load the fine-tuned sentiment analysis model
 sentiment_model = pipeline(
     "sentiment-analysis",
     model="Kimia124/finetuning-sentiment-model-3000-samples",
@@ -17,11 +17,11 @@ results = sentiment_model(["I love this movie", "This movie sucks!"])
 for result in results:
     print(result)
 
-# Load your Amazon dataset
-dataset = pd.read_csv("/mnt/c/Users/shkim/Desktop/LLM Projects/Bert_Classifier/amazon.csv")
-print(dataset.columns)
+# Load Amazon dataset
+dataset = pd.read_csv("./amazon.csv")
+# print(dataset.columns)
 
-# Convert non-string values to strings and filter out None values
+# Pre-processing text: Convert non-string values to strings and filter out None values
 reviews = [str(text) for text in dataset["reviewText"] if text is not None]
 reviews = [text if text.strip() != "" else "No review text." for text in reviews]
 # print(dataset.columns)
