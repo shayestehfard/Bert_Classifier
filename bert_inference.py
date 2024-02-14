@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score, classification_report
 sentiment_model = pipeline(
     "sentiment-analysis",
     model="Kimia124/finetuning-sentiment-model-3000-samples",
-    truncation=True  # Ensure sequences longer than model's max length are truncated
+    truncation=True,  # Ensure sequences longer than model's max length are truncated
 )
 
 
@@ -27,7 +27,7 @@ reviews = [text if text.strip() != "" else "No review text." for text in reviews
 # print(dataset.columns)
 results = sentiment_model(reviews)
 
-test_reviews = reviews[:10]  
+test_reviews = reviews[:10]
 test_results = sentiment_model(test_reviews)
 
 for result in test_results:
