@@ -22,15 +22,6 @@ from datasets import load_dataset
 import evaluate
 from evaluate import evaluator
 
-# from huggingface_hub import notebook_login
-# notebook_login()
-# from huggingface_hub import HfFolder
-# HfFolder.save_token('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')
-# from huggingface_hub import HfApi
-
-# token = "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"  # Replace with your actual token
-# api = HfApi()
-# api.set_access_token(token)
 
 RANDOM_SEED = 123
 np.random.seed(RANDOM_SEED)
