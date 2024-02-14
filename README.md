@@ -13,13 +13,15 @@ pip install -r requirements.txt
 
 ## Usage
 
-To fine-tune the BERT model on IMDB dataset:
+### Fine-tuning the BERT Model
+To fine-tune the DistilBERT model on the IMDB dataset, execute the following command:
 
 ```bash
 Python bert.py
 ```
 
-To test on Amazon reviews dataset:
+### Testing on a differnt dataset
+To test on Amazon reviews dataset, execute the following command:
 
 ```bash
 Python bert_inference.py
